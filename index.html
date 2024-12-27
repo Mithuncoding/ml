@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <i class="fas fa-leaf leaf-icon"></i>
+            <h1>Plant Disease Detection</h1>
+            <p class="subtitle">Upload or paste a leaf image for instant analysis</p>
+        </div>
+
+        <div class="upload-container">
+            <div class="upload-box">
+                <div class="upload-options">
+                    <div class="upload-section">
+                        <input type="file" id="imageInput" accept="image/*" class="file-input">
+                        <label for="imageInput" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Choose Image</span>
+                        </label>
+                    </div>
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+                    <div class="paste-section">
+                        <button id="pasteBtn" class="paste-btn">
+                            <i class="fas fa-paste"></i>
+                            <span>Paste Image</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-container">
+                        <img id="imagePreview" src="#" alt="Preview" style="display: none;">
+                        <div class="preview-placeholder">
+                            <i class="fas fa-image"></i>
+                            <p>Your image will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="analyzeBtn" class="analyze-btn" disabled>
+                <i class="fas fa-microscope"></i>
+                <span>Analyze Plant</span>
+            </button>
+
+            <div id="result" class="result-section">
+                <div class="result-card">
+                    <div id="plantName" class="result-item plant-name">
+                        <i class="fas fa-seedling"></i>
+                        <span class="result-label">Plant Identification</span>
+                        <p class="result-text"></p>
+                    </div>
+                    <div id="healthStatus" class="result-item health-status">
+                        <i class="fas fa-heart"></i>
+                        <span class="result-label">Health Status</span>
+                        <p class="result-text"></p>
+                    </div>
+                    <div id="disease" class="result-item disease-info">
+                        <i class="fas fa-virus"></i>
+                        <span class="result-label">Disease Information</span>
+                        <p class="result-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
